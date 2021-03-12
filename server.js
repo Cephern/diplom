@@ -184,11 +184,11 @@ if (process.env.NODE_ENV === "production") {
   app.get("/about", (req, res) => {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
-
-  app.use((req, res) => {
-    res.sendFile(path.resolve(_dirname, "404.html"));
-  });
 }
+
+app.use((req, res) => {
+  res.sendFile(path.resolve(_dirname, "404.html"));
+});
 
 app.listen(process.env.PORT || 5000, () => {
   console.log(`Server is listening on PORT ${process.env.PORT || 5000}`);
