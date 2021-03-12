@@ -81,7 +81,7 @@ const Profile = () => {
 
   useEffect(() => {
     axios
-      .get("https://nano-doc.herokuapp.com/form", { withCredentials: true })
+      .get("https://nano-doc.herokuapp.com/api/form", { withCredentials: true })
       .then((res) => setForms(res.data));
   }, []);
 

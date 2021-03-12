@@ -119,13 +119,13 @@ app.get("/logout", (req, res) => {
 
 // App Routes
 
-app.get("/doctors", (req, res) => {
+app.get("/api/doctors", (req, res) => {
   Doctor.find()
     .sort({ likes: -1 })
     .then((doctors) => res.json(doctors));
 });
 
-app.get("/form", (req, res) => {
+app.get("/api/form", (req, res) => {
   Form.find({ doctor: req.user.fio })
     .then((forms) => {
       res.json(forms);
@@ -133,7 +133,7 @@ app.get("/form", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-app.post("/form", (req, res) => {
+app.post("/api/form", (req, res) => {
   const { answers, selectedDoctor, fio } = req.body;
   const diagnos = diagnosis(answers);
 
@@ -153,13 +153,13 @@ app.post("/form", (req, res) => {
   });
 });
 
-app.get("/reviews", (req, res) => {
+app.get("/api/reviews", (req, res) => {
   Review.find()
     .sort({ createdAt: -1 })
     .then((reviews) => res.json(reviews));
 });
 
-app.post("/reviews", (req, res) => {
+app.post("/api/reviews", (req, res) => {
   const { fio, review } = req.body;
 
   const newReview = new Review({
@@ -173,8 +173,20 @@ app.post("/reviews", (req, res) => {
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 
-  app.get("*", (req, res) => {
+  app.get("/", (req, res) => {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
+
+  app.get("/doctors", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
+
+  app.get("/about", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(_dirname, "404.html"));
   });
 }
 

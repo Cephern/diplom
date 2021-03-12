@@ -8,7 +8,7 @@ const ReviewsContextProvider = (props) => {
 
   useEffect(() => {
     axios
-      .get("https://nano-doc.herokuapp.com/reviews")
+      .get("https://nano-doc.herokuapp.com/api/reviews")
       .then((res) => setReviews(res.data));
   }, []);
 

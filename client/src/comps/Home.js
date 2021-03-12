@@ -141,7 +141,7 @@ const Home = () => {
       return;
     } else {
       axios
-        .post("https://nano-doc.herokuapp.com/form", {
+        .post("https://nano-doc.herokuapp.com/api/form", {
           answers,
           selectedDoctor,
           fio,

@@ -13,7 +13,7 @@ const About = () => {
 
   const handleSubmit = (e) => {
     axios
-      .post("https://nano-doc.herokuapp.com/reviews", { fio, review })
+      .post("https://nano-doc.herokuapp.com/api/reviews", { fio, review })
       .catch((err) => console.log(err));
   };
 

@@ -8,7 +8,7 @@ const DoctorsContextProvider = (props) => {
 
   useEffect(() => {
     axios
-      .get("https://nano-doc.herokuapp.com/doctors")
+      .get("https://nano-doc.herokuapp.com/api/doctors")
       .then((res) => setDoctors(res.data));
   }, []);
 

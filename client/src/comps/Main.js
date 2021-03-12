@@ -36,9 +36,6 @@ const Main = () => {
                   <Route path="/about">
                     <About />
                   </Route>
-                  <Route exact path="*">
-                    <NotFound />
-                  </Route>
                 </ReviewsContextProvider>
               </DoctorsContextProvider>
             </>
@@ -51,10 +48,6 @@ const Main = () => {
 
             <Route path="/register">
               <Register />
-            </Route>
-
-            <Route exact path="*">
-              <NotFound />
             </Route>
           </>
         )}
