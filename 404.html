@@ -5,8 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NanoDoc</title>
+    <style>
+      #not-found {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(to bottom right, #a685e2, #6155a6);
+      }
+
+      #not-found h1 {
+        padding: 20px;
+        margin-bottom: 20px;
+        font-size: 5em;
+        color: #ecb390;
+      }
+
+      #not-found p {
+        text-align: center;
+        padding: 20px;
+        color: #f4f4f4;
+      }
+
+      #not-found a {
+        text-decoration: none;
+        color: #f4f4f4;
+        padding: 10px;
+        border: 2px solid #f4f4f4;
+        border-radius: 10px;
+      }
+    </style>
   </head>
   <body>
-    404
+    <div id="not-found">
+      <h1>404</h1>
+      <p>
+        Страница не найдена, используйте навигационное меню слева для
+        перемещения по сайту
+      </p>
+      <a href="https://nano-doc.herokuapp.com/">К Главной странице</a>
+    </div>
   </body>
 </html>

@@ -565,29 +565,6 @@ ul {
   box-shadow: 2px 3px 2px #000;
 }
 
-#not-found {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(to bottom right, #a685e2, #6155a6);
-}
-
-#not-found h1 {
-  padding: 20px;
-  margin-bottom: 20px;
-  font-size: 5em;
-  color: #ecb390;
-}
-
-#not-found p {
-  text-align: center;
-  padding: 20px;
-  color: #f4f4f4;
-}
-
 #profile {
   text-align: center;
   background: linear-gradient(to bottom right, #6155a6, #a685e2);
