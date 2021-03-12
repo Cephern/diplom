@@ -188,7 +188,7 @@ if (process.env.NODE_ENV === "production") {
 
 app.get("/*", (req, res) => {
   console.log("404");
-  res.sendFile(path.resolve(_dirname, "404.html"));
+  res.sendFile(path.resolve(__dirname, "404.html"));
 });
 
 app.listen(process.env.PORT || 5000, () => {
