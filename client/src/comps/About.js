@@ -12,6 +12,7 @@ const About = () => {
   const [review, setReview] = useState();
 
   const handleSubmit = (e) => {
+    e.preventDefault();
     axios
       .post("https://nano-doc.herokuapp.com/reviews", { fio, review })
       .catch((err) => console.log(err));

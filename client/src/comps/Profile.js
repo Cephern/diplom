@@ -104,7 +104,7 @@ const Profile = () => {
       <div className="nav-right">
         <span onClick={logout}>Выйти</span>
       </div>
-      <h2>Добро пожаловать</h2>
+      <h2>Добро пожаловать,</h2>
       <p className="user-fio">{user.fio}</p>
       {forms ? (
         forms.map((form) => {
