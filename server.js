@@ -187,6 +187,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 app.get("/*", (req, res) => {
+  console.log("404");
   res.sendFile(path.resolve(_dirname, "404.html"));
 });
 
