@@ -17,16 +17,16 @@ const Main = () => {
 
   return (
     <>
-      {user ? (
-        user.isDoctor ? (
-          <Route path="/">
-            <Profile />
-          </Route>
-        ) : (
-          <>
-            <DoctorsContextProvider>
-              <ReviewsContextProvider>
-                <Switch>
+      <Switch>
+        {user ? (
+          user.isDoctor ? (
+            <Route path="/">
+              <Profile />
+            </Route>
+          ) : (
+            <>
+              <DoctorsContextProvider>
+                <ReviewsContextProvider>
                   <Route exact path="/">
                     <Home />
                   </Route>
@@ -39,14 +39,12 @@ const Main = () => {
                   <Route path="*">
                     <NotFound />
                   </Route>
-                </Switch>
-              </ReviewsContextProvider>
-            </DoctorsContextProvider>
-          </>
-        )
-      ) : (
-        <>
-          <Switch>
+                </ReviewsContextProvider>
+              </DoctorsContextProvider>
+            </>
+          )
+        ) : (
+          <>
             <Route exact path="/">
               <Login />
             </Route>
@@ -58,9 +56,9 @@ const Main = () => {
             <Route path="*">
               <NotFound />
             </Route>
-          </Switch>
-        </>
-      )}
+          </>
+        )}
+      </Switch>
     </>
   );
 };
