@@ -7,7 +7,7 @@ const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const MongoStore = require("connect-mongo").default;
 const bcrypt = require("bcrypt");
-import path from "path";
+const path = require("path");
 
 const User = require("./models/User");
 const Doctor = require("./models/Doctor");
