@@ -25,7 +25,13 @@ const Register = () => {
         },
         { withCredentials: true }
       )
-      .then((res) => (window.location.href = "/"));
+      .then((res) => {
+        if (res.data === "error") {
+          document.querySelector("p.error").innerText =
+            "Логин уже занят, выберите другой";
+        }
+        window.location.href = "/";
+      });
   };
   return (
     <div id="register">
@@ -46,6 +52,7 @@ const Register = () => {
           placeholder="пароль"
           onChange={(e) => setPassword(e.target.value)}
         />
+        <p className="error"></p>
         <div
           className="err-message"
           style={isOpen ? { opacity: 1 } : { opacity: 0 }}
