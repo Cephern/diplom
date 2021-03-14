@@ -162,6 +162,10 @@ ul {
   color: #333;
 }
 
+.login p.error {
+  color: #fff;
+}
+
 #home {
   display: flex;
   flex-direction: column;

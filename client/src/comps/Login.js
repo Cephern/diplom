@@ -22,7 +22,12 @@ const Login = () => {
         { withCredentials: true }
       )
       .then((res) => {
-        if (res.data === "success") window.location.href = "/";
+        if (res.data === "success") {
+          window.location.href = "/";
+        } else {
+          document.querySelector("p.error").innerText =
+            "Неверный логин или пароль";
+        }
       });
   };
 
@@ -40,6 +45,7 @@ const Login = () => {
           placeholder="пароль"
           onChange={(e) => setPassword(e.target.value)}
         />
+        <p className="error"></p>
         <div
           className="err-message"
           style={isOpen ? { opacity: 1 } : { opacity: 0 }}

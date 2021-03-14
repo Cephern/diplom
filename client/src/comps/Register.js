@@ -29,8 +29,9 @@ const Register = () => {
         if (res.data === "error") {
           document.querySelector("p.error").innerText =
             "Логин уже занят, выберите другой";
+        } else {
+          window.location.href = "/";
         }
-        window.location.href = "/";
       });
   };
   return (
