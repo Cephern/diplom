@@ -22,11 +22,12 @@ const Login = () => {
         { withCredentials: true }
       )
       .then((res) => {
-        if (res.data === "success") {
-          window.location.href = "/";
-        } else {
+        if (res.status === 401) {
           document.querySelector("p.error").innerText =
             "Неверный логин или пароль";
+        }
+        if (res.data === "success") {
+          window.location.href = "/";
         }
       });
   };
