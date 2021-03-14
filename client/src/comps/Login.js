@@ -22,7 +22,10 @@ const Login = () => {
         { withCredentials: true }
       )
       .then((res) => {
-        if (res.status === 401) {
+        console.log(res);
+        console.log(res.status);
+        console.log(typeof res.status);
+        if (res.status === "401") {
           document.querySelector("p.error").innerText =
             "Неверный логин или пароль";
         }
