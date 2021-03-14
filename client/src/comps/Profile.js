@@ -109,11 +109,11 @@ const Profile = () => {
       {forms ? (
         forms.map((form) => {
           return (
-            <div className="profile-form" key={form._id}>
+            <div className="profile-form">
               <p>Пациент: {form.fio}</p>
               <p>Диагноз: {form.diagnosis}</p>
               <div className="profile-inner">
-                <ProfileInner form={form} decrypt={decrypt} />
+                <ProfileInner form={form} decrypt={decrypt} key={form["_id"]} />
               </div>
             </div>
           );

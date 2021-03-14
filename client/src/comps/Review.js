@@ -1,7 +1,9 @@
 const Review = ({ review }) => {
   return (
     <div className="review">
-      <h4>Review by {review.reviewer}</h4>
+      <h4>
+        Отзыв от <span className="fio-span">{review.reviewer}</span>
+      </h4>
       <p>{review.review}</p>
     </div>
   );

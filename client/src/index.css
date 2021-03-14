@@ -400,7 +400,7 @@ ul {
     "reviews form-review";
   margin: 0 auto;
   margin-bottom: 40px;
-  width: 900px;
+  max-width: 700px;
   justify-items: center;
 }
 
@@ -463,6 +463,10 @@ ul {
   line-break: anywhere;
 }
 
+#about main .review .fio-span {
+  color: #9b3675;
+}
+
 #about .submit-review {
   grid-area: form-review;
   display: flex;
@@ -482,6 +486,7 @@ ul {
 
 #about .submit-review input {
   border-radius: 20px;
+  padding: 0 10px;
 }
 
 #about .submit-review textarea {
@@ -497,6 +502,12 @@ ul {
   border-radius: 20px;
   width: 50%;
   border: 2px solid #000;
+  cursor: pointer;
+  outline: 0;
+}
+
+#about .submit-review button:active {
+  transform: scale(0.95);
 }
 
 #doctors {
@@ -509,6 +520,7 @@ ul {
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+  padding: 20px;
 }
 
 #doctors .title {
@@ -544,7 +556,10 @@ ul {
   text-align: center;
   margin-right: 50px;
   border: 2px solid #000;
-  border-radius: 30px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -583,7 +598,7 @@ ul {
   border-bottom: 2px solid #eee;
   padding: 5px 10px;
   background: rgba(0, 0, 0, 0.5);
-  width: 700px;
+  max-width: 700px;
   margin: 30px auto 15px;
 }
 
@@ -625,4 +640,20 @@ svg {
 
 svg:hover {
   transform: scale(1.1);
+}
+
+@media (max-width: 900px) {
+  #home .upper .doctors-inputs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  #home .upper .doctors-inputs {
+    grid-template-columns: 1fr;
+  }
+
+  #home .form-inputs {
+    grid-template-columns: 1fr;
+  }
 }

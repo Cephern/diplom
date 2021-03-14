@@ -5,10 +5,12 @@ import Review from "./Review";
 import Nav from "./Nav";
 
 import { reviewsContext } from "../context/reviewsContext";
+import { userContext } from "../context/userContext";
 
 const About = () => {
   const reviews = useContext(reviewsContext);
-  const [fio, setFio] = useState();
+  const user = useContext(userContext);
+  const [fio, setFio] = useState(user.fio);
   const [review, setReview] = useState();
 
   const handleSubmit = (e) => {
@@ -25,24 +27,20 @@ const About = () => {
 
         <div className="description">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-            quod distinctio, aliquam libero sed necessitatibus. Laudantium
-            facilis laborum ratione cumque cum ducimus ad voluptatibus est,
-            necessitatibus culpa aspernatur. Commodi enim dolorum eum officiis?
-            Quod enim quidem natus, ut numquam maiores, voluptate debitis
-            dignissimos voluptatum hic, quibusdam repellat corrupti delectus
-            tempore. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Autem, ipsam. At eaque exercitationem quae ad nobis pariatur
-            architecto. Possimus ratione a repellat quae impedit expedita! Error
-            dolores, similique et sint autem nemo minus fuga culpa sapiente.
-            Deleniti magnam sed commodi aperiam numquam, laudantium, id
-            repudiandae, accusantium eligendi blanditiis quo non. Lorem ipsum,
-            dolor sit amet consectetur adipisicing elit. Vero quibusdam deleniti
-            ipsum officiis officia et culpa consectetur, atque recusandae. Ipsum
-            nobis consectetur voluptatem temporibus cum aspernatur, eos
-            molestias, repellendus provident quo magnam incidunt dignissimos
-            illo dolor praesentium eligendi culpa expedita consequatur dolorem
-            eaque beatae sint? Eius officiis labore illo consequuntur.
+            Здравствуйте и спасибо за выбор сервиса “NanoDoc”. Цель нашего
+            сервиса – предоставить Вам предварительный диагноз
+            стоматологического заболевания. Все что нужно сделать – заполнить
+            форму на главной странице, ответив на 10 коротких вопросов. Для
+            получения результата обязательно ответить на все вопросы. Если вы
+            хотите, чтобы вашу заявку и диагноз рассмотрел врач – выберите его
+            из списка в верхней части страницы. Для облегчения выбора врача мы
+            предоставляем страницу “Врачи”, которая поможет сделать Вам
+            правильный выбор. После нажатия кнопки “Отправить” на Главной
+            странице, врачу поступят данные о Вас (ФИО), а также Ваши ответы на
+            вопросы формы. Если у Вас остались какие-то вопросы, пожелания и
+            предложения, или же Вы хотите поделиться своим опытом использования
+            приложения, тогда стоит оставить отзыв, заполнив форму внизу
+            страницы. Будем рады Вашим комментариям!
           </p>
         </div>
 
