@@ -105,11 +105,7 @@ app.post("/register", (req, res) => {
 });
 
 app.post("/login", passport.authenticate("local"), (req, res) => {
-  if (req.user.isAuthenticated) {
-    res.send("success");
-  } else {
-    res.send("error");
-  }
+  res.send("success");
 });
 
 app.get("/user", (req, res) => {
