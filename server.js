@@ -5,7 +5,6 @@ const passport = require("passport");
 const passportLocal = require("passport-local");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
-const MongoStore = require("connect-mongo").default;
 const bcrypt = require("bcrypt");
 const path = require("path");
 
@@ -19,7 +18,7 @@ const diagnosis = require("./diagnosis");
 const LocalStrategy = passportLocal.Strategy;
 
 const connection = mongoose.connect(
-  "mongodb+srv://admin:123321@cluster0.lls3e.mongodb.net/diploma?retryWrites=true&w=majority",
+  process.env.CONNECT,
   { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true },
   () => console.log("Connected to MongoDB")
 );
@@ -34,14 +33,14 @@ app.use(
     credentials: true,
   })
 );
-app.use(cookieParser("exoduslul"));
+app.use(cookieParser(process.env.SECRET));
 app.use(
   session({
-    secret: "exoduslul",
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: false,
     cookie: {
-      maxAge: 3600 * 24 * 24,
+      maxAge: 3600 * 24,
     },
   })
 );

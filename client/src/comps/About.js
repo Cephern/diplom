@@ -50,7 +50,7 @@ const About = () => {
           <div className="reviews-inner">
             {reviews ? (
               reviews
-                .slice(0, 4)
+                .slice(0, 6)
                 .map((review) => <Review review={review} key={review._id} />)
             ) : (
               <div>Пока что тут пусто...</div>
