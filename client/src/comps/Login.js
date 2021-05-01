@@ -17,7 +17,7 @@ const Login = () => {
 
     axios
       .post(
-        "https://nano-doc.herokuapp.com/login",
+        "https://nano-doc.netlify.app/login",
         { username, password },
         { withCredentials: true }
       )

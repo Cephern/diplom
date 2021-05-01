@@ -81,13 +81,13 @@ const Profile = () => {
 
   useEffect(() => {
     axios
-      .get("https://nano-doc.herokuapp.com/api/form", { withCredentials: true })
+      .get("https://nano-doc.netlify.app/api/form", { withCredentials: true })
       .then((res) => setForms(res.data));
   }, []);
 
   const logout = () => {
     axios
-      .get("https://nano-doc.herokuapp.com/logout", {
+      .get("https://nano-doc.netlify.app/logout", {
         withCredentials: true,
       })
       .then((res) => {

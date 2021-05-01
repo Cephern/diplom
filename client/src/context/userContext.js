@@ -8,7 +8,7 @@ const UserContextProvider = (props) => {
 
   useEffect(() => {
     axios
-      .get("https://nano-doc.herokuapp.com/user", {
+      .get("https://nano-doc.netlify.app/user", {
         withCredentials: true,
       })
       .then((res) => {

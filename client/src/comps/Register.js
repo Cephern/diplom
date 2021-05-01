@@ -17,7 +17,7 @@ const Register = () => {
 
     axios
       .post(
-        "https://nano-doc.herokuapp.com/register",
+        "https://nano-doc.netlify.app/register",
         {
           username,
           fio,

@@ -29,7 +29,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://nano-doc.herokuapp.com",
+    origin: "https://nano-doc.netlify.app",
     credentials: true,
   })
 );

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Nav = () => {
   const logout = () => {
     axios
-      .get("https://nano-doc.herokuapp.com/logout", {
+      .get("https://nano-doc.netlify.app/logout", {
         withCredentials: true,
       })
       .then((res) => {
